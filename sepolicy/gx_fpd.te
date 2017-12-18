@@ -1,0 +1,9 @@
+allow gx_fpd firmware_file:dir search;
+allow gx_fpd firmware_file:file { getattr open read };
+allow gx_fpd gx_fpd_data_file:dir { add_name getattr remove_name write };
+allow gx_fpd gx_fpd_data_file:file { append create getattr open setattr unlink };
+allow gx_fpd gx_fpd_data_file:sock_file { create unlink };
+allow gx_fpd sysfs_mmi_fp:dir { open read search };
+allow gx_fpd sysfs_mmi_fp:file rw_file_perms;
+allow gx_fpd system_data_file:sock_file unlink;
+allow gx_fpd tee_device:chr_file { ioctl open read write };
